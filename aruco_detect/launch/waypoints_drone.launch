@@ -1,0 +1,9 @@
+<launch>
+    <!-- 期望高度 -->
+    <arg name="desire_height" default="1.0" />
+
+    <node pkg="aruco_detect" type="waypoints_drone" name="waypoints_drone" output="screen">
+        <rosparam file="$(find aruco_detect)/config/waypoints.yaml" command="load"/>
+        <param name="desire_height" value="$(arg desire_height)" />
+    </node>
+</launch>
